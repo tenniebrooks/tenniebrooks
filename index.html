@@ -7,17 +7,46 @@
 <meta name="color-scheme" content="dark">
 <title></title>
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#000}
-body{padding:3px;background:#000}
-.gallery{columns:3;column-gap:3px;width:100%;}
-.photo{display:block;width:100%;height:auto;margin:0 0 3px;break-inside:avoid;page-break-inside:avoid;object-fit:contain;background:#000;}
-@media(max-width:700px){body{padding:2px}.gallery{columns:2;column-gap:3px}.photo{margin-bottom:3px}}
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: #000;
+}
+body {
+  padding: 12px;
+  background: #000;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  width: 100%;
+  align-items: start;
+}
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+  background: #000;
+}
+@media (max-width: 700px) {
+  body {
+    padding: 8px;
+  }
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+}
 </style>
 </head>
 <body>
 <main class="gallery">
-<!-- Add your photos to this folder and name them photo-01.jpg, photo-02.jpg, etc. -->
 <img class="photo" src="photo-01.jpg" alt="">
 <img class="photo" src="photo-02.jpg" alt="">
 <img class="photo" src="photo-03.jpg" alt="">
